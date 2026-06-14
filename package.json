@@ -1,0 +1,27 @@
+{
+  "name": "trabalho-de-conclusao-de-disciplina-ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha 'test/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IaraStevani/trabalho-de-conclusao-de-disciplina-CI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/IaraStevani/trabalho-de-conclusao-de-disciplina-CI/issues"
+  },
+  "homepage": "https://github.com/IaraStevani/trabalho-de-conclusao-de-disciplina-CI#readme",
+  "dependencies": {
+    "mocha": "^11.7.6"
+  }
+}
