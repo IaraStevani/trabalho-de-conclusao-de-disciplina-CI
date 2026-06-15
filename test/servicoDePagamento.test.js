@@ -1,4 +1,4 @@
-    import ServicoDePagamento from '../src/servicoDePagamento.js';
+import ServicoDePagamento from '../src/servicoDePagamento.js';
 import assert from 'node:assert';
 
 describe('Testes da Classe Serviço De Pagamento', () => {

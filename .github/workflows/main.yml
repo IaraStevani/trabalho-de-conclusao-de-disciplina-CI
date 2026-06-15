@@ -1,0 +1,47 @@
+# Trabalho de conclusão da disciplina de CI - PGATS
+
+# nome da pipeline
+name: 'CI - PGATS'
+
+# Gatilhos de execução / Triggers - Regras de disparo da pipeline
+on:
+  push:
+    branches: [ "main" ]            # Execução por push
+  workflow_dispatch:                 # Execução manual
+  schedule:
+    - cron: '*/5 * * * *'             # Execução agendada - roda a cada 5 minutos
+
+#tarefas dentro da pipeline = jobs
+jobs:
+  #nome do job
+  unit-tests:
+    # Máquina para Execução
+    runs-on: ubuntu-latest          
+
+    # passos do job
+    steps:
+      # clone do projeto
+      - name: Checkout do Código
+        uses: actions/checkout@v4    # Controle de Versão
+      
+      # Instalação do node
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+      # Instalação das dependências
+      - name: Instalar Dependências
+        run: npm ci
+
+      # Executar os testes e gerar relatório
+      - name: Executando testes e gerando relatório
+        run: npm test 
+
+      # Publicar Relatório de Testes
+      - name: Salvando relatórios de testes
+        uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: Relatório de Testes
+          path: test-report
