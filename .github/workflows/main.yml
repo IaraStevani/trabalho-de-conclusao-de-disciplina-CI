@@ -36,7 +36,7 @@ jobs:
 
       # Executar os testes e gerar relatório
       - name: Executando testes e gerando relatório
-        run: npm test 
+        run: npm run test:report
 
       # Publicar Relatório de Testes
       - name: Salvando relatórios de testes

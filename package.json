@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha \"test/**/*.js\""
+    "test": "mocha \"test/**/*.js\"",
+    "test:report": "mocha \"test/**/*.js\" --reporter mochawesome --reporter-options reportDir=test-report,reportFilename=index,html=true,json=false"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
   "homepage": "https://github.com/IaraStevani/trabalho-de-conclusao-de-disciplina-CI#readme",
   "dependencies": {
     "mocha": "^11.7.6"
+  },
+  "devDependencies": {
+    "mochawesome": "^7.1.4"
   }
 }
